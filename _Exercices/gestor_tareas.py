@@ -3,6 +3,7 @@ class Tarea:
         self.descripcion = descripcion
         self.completada = completada
 
+
 class GestorTareas:
     def __init__(self):
         self.tareas = []
@@ -27,6 +28,7 @@ class GestorTareas:
             del self.tareas[indice]
         except IndexError:
             print("La posición ingresada no existe en la lista.")
+
 
 if __name__ == "__main__":
     gestor = GestorTareas()
