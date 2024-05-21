@@ -1,59 +1,66 @@
-class Tarea:
-    def __init__(self, descripcion, completada=False):
-        self.descripcion = descripcion
-        self.completada = completada
+from termcolor import colored
+
+class Task:
+    def __init__(self, description, completed=False):
+        self.description = description
+        self.completed = completed
 
 
-class GestorTareas:
+class TaskManager:
     def __init__(self):
-        self.tareas = []
+        self.tasks = []
 
-    def agregar_tarea(self, descripcion):
-        tarea = Tarea(descripcion)
-        self.tareas.append(tarea)
+    def add_task(self, description):
+        task = Task(description)
+        self.tasks.append(task)
 
-    def marcar_completada(self, indice):
+    def mark_completed(self, index):
         try:
-            self.tareas[indice].completada = True
+            self.tasks[index].completed = True
         except IndexError:
-            print("La posición ingresada no existe en la lista.")
+            print(colored("🚫 The entered position does not exist in the list.", "red"))
 
-    def mostrar_tareas(self):
-        for i, tarea in enumerate(self.tareas):
-            estado = "Completada" if tarea.completada else "Pendiente"
-            print(f"{i+1}. {tarea.descripcion} - Estado: {estado}")
+    def show_tasks(self):
+        for i, task in enumerate(self.tasks):
+            status = "✅ Completed" if task.completed else "🔴 Pending"
+            print(f"{i+1}. {task.description} - Status: {colored(status, 'green' if task.completed else 'yellow')}")
 
-    def eliminar_tarea(self, indice):
+    def delete_task(self, index):
         try:
-            del self.tareas[indice]
+            del self.tasks[index]
         except IndexError:
-            print("La posición ingresada no existe en la lista.")
+            print(colored("🚫 The entered position does not exist in the list.", "red"))
 
 
 if __name__ == "__main__":
-    gestor = GestorTareas()
+    manager = TaskManager()
 
     while True:
-        print("\n1. Agregar tarea")
-        print("2. Marcar tarea como completada")
-        print("3. Mostrar todas las tareas")
-        print("4. Eliminar tarea")
-        print("5. Salir")
+        print("\n1. ➕ Add task")
+        print("2. ✅ Mark task as completed")
+        print("3. 📋 Show all tasks")
+        print("4. ❌ Delete task")
+        print("5. 🚪 Exit")
 
-        opcion = input("Ingrese una opción: ")
+        option = input("Enter an option: ")
 
-        if opcion == "1":
-            descripcion = input("Ingrese la descripción de la tarea: ")
-            gestor.agregar_tarea(descripcion)
-        elif opcion == "2":
-            indice = int(input("Ingrese el número de la tarea a marcar como completada: ")) - 1
-            gestor.marcar_completada(indice)
-        elif opcion == "3":
-            gestor.mostrar_tareas()
-        elif opcion == "4":
-            indice = int(input("Ingrese el número de la tarea a eliminar: ")) - 1
-            gestor.eliminar_tarea(indice)
-        elif opcion == "5":
+        if option == "1":
+            description = input("Enter the task description: ")
+            manager.add_task(description)
+        elif option == "2":
+            print("\n📋 Current tasks:")
+            manager.show_tasks()
+            index = int(input("\nEnter the number of the task to mark as completed: ")) - 1
+            manager.mark_completed(index)
+        elif option == "3":
+            print("\n📋 Current tasks:")
+            manager.show_tasks()
+        elif option == "4":
+            print("\n📋 Current tasks:")
+            manager.show_tasks()
+            index = int(input("\nEnter the number of the task to delete: ")) - 1
+            manager.delete_task(index)
+        elif option == "5":
             break
         else:
-            print("Opción no válida. Por favor, ingrese una opción válida.")
+            print(colored("⚠️ Invalid option. Please enter a valid option.", "red"))
