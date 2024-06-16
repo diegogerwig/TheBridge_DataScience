@@ -40,5 +40,5 @@ DabaBase: ***TPCH_S1000***
 ## POWER BI
 
 ### ERRORS
--	Gráficos que no cargan porque tienen demasidos registros (+ de 100000)
+- 	Charts that do not load because they have too many records (more than 100,000)
 
