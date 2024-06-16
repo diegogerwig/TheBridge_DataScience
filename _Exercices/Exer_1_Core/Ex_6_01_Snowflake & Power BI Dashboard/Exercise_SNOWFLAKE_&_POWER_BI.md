@@ -40,7 +40,7 @@ DabaBase: ***TPCH_S1000***
 ## POWER BI
 
 ### ERRORS
--	Gráfcios que no cargan porque tienen demasidos registros (+ de 100000)
+-	Gráficos que no cargan porque tienen demasidos registros (+ de 100000)
 
 
 
