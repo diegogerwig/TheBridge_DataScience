@@ -8,8 +8,6 @@ Emplearemos la base de datos Snowflake que creamos en sesiones anteriores.
 
 ![conexion](./img/snowflake-connect.png)
 
-
-
 Si os conectáis con DBeaver o PowerBI a la base de datos **SNOWFLAKE_SAMPLE_DATA**.**TPCH_S1000** veréis que se os muestran las tablas tal que así.
 
 ![schema](./img/schema-snow.png)
