@@ -1,5 +1,7 @@
 # REPORT
 
+![](./img/dashboard.png)
+
 ---
 ---
 
@@ -33,6 +35,8 @@ DabaBase: ***TPCH_S1000***
 -	Nation.n_nationkey 1->* Customer.c_nationkey
 -	Region.r_regionkey 1->* Nation.n_regionkey
 -	Supplier.s_nationkey -> Nation.n_nationkey  (❗Conflict)
+
+![](./img/schema.png)
 
 ---
 ---
