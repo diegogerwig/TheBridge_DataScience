@@ -46,5 +46,3 @@ DabaBase: ***TPCH_S1000***
 ### ERRORS
 - 	Charts that do not load because they have too many records (more than 100,000)
 
-
-
