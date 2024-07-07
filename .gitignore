@@ -1,6 +1,8 @@
 .env
 snowflake.py
 _Exam/
+**/forest_fires
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
